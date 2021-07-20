@@ -1,0 +1,48 @@
+// JSON Generator - https://www.json-generator.com/
+
+{
+  workouts: [
+    '{{repeat(1000)}}',
+  {
+	    id: '{{objectId()}}',
+    name: '{{lorem(integer(2, 5), "words").substring(0, 12)}}',
+    picture: {
+      thumbnail: 'https://source.unsplash.com/600x600/?workout,sport{{index()}}',
+      image: "https://source.unsplash.com/1280x720/?workout,sport{{index()}}"
+    },
+    category: '{{random("c1", "c2", "c3", "c4", "c5", "c6", "c7")}}',
+    startDate: '{{date(new Date(), new Date((new Date()).setMonth((new Date()).getMonth()+12)), "YYYY-MM-ddThh:mm:ss Z")}}',
+    description: '{{lorem(integer(8, 16), "paragraphs")}}',
+    index: '{{index()}}',
+    guid: '{{guid()}}',
+    isActive: true,
+    price: '{{floating(100, 500, 2, "$0,0.00")}}',
+    minAge: '{{integer(15, 40)}}',
+    allowedGender: '{{gender()}}',
+    company: '{{company().toUpperCase()}}',
+    coachInfo: [
+      '{{repeat(3, 5)}}',
+      {
+      name: '{{firstName()}} {{surname()}}',
+      email: '{{email()}}',
+      phone: '+1 {{phone()}}'
+    }],
+    address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+    createdAt: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+    latitude: '{{floating(-90.000001, 90)}}',
+    longitude: '{{floating(-180.000001, 180)}}',
+    tags: [
+      '{{repeat(8)}}',
+      '{{lorem(1, "words")}}'
+    ],
+    registeredUsers: [
+      '{{repeat(30, 35)}}',
+      {
+        id: '{{index()}}',
+        name: '{{firstName()}} {{surname()}}',
+        email: '{{email()}}'
+      }
+    ]
+  }
+  ]
+}
